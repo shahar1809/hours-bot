@@ -26,7 +26,7 @@ assert.match(r, /נמחק/); assert.match(r, /נשארו 2/);
 assert.match(await say('מחק 1'), /שלחי קודם "רשימה"/); // list invalidated after a delete
 r = await say('רשימה');
 assert.equal(r.split('\n').filter((l) => /^\d+\./.test(l)).length, 2);
-assert.match(await say('דוח'), /סה״כ: 7:00/);
+assert.match(await say('דוח'), /סה״כ: 7 שעות/);
 
 // stale numbers: add an entry after listing -> numbering must be re-requested
 await say('רשימה'); await say('עוד מקום 1 שעה');
