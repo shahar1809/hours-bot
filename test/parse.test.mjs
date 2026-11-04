@@ -13,6 +13,9 @@ const bad = (input) => assert.ok(parseEntry(input, NOW).error, `expected error: 
 
 // The two formats from the brief
 ok('לבצלר 4 שעות', { date: '2026-11-03', place: 'לבצלר', minutes: 240 });
+ok('לבצלר 3', { date: '2026-11-03', place: 'לבצלר', minutes: 180 });
+ok('אתמול לבצלר 2.5', { date: '2026-11-02', place: 'לבצלר', minutes: 150 });
+ok('לאורו נלך 3', { date: '2026-11-03', place: 'לאורו נלך', minutes: 180 });
 ok('לאורו נלך 14:00 עד 16:00', { date: '2026-11-03', place: 'לאורו נלך', minutes: 120 });
 
 // Variants
