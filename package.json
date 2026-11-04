@@ -1,0 +1,13 @@
+{
+  "name": "hours-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "WhatsApp work-hours logger with monthly report",
+  "scripts": {
+    "test": "node test/parse.test.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
