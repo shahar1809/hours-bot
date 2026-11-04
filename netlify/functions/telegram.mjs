@@ -12,7 +12,7 @@ function safeEqual(a, b) {
 }
 
 // Telegram slash commands mapped onto the same text commands the handler already knows
-const COMMANDS = { '/report': 'דוח', '/prev': 'דוח קודם', '/undo': 'מחק' };
+const COMMANDS = { '/report': 'דוח', '/prev': 'דוח קודם', '/undo': 'מחק', '/list': 'רשימה', '/clear': 'נקה חודש' };
 
 export default async (req) => {
   const secret = process.env.TELEGRAM_WEBHOOK_SECRET;

@@ -7,7 +7,7 @@ Telegram bot for logging work hours in Hebrew free text and getting a monthly re
 - `לאורו נלך 14:00 עד 16:00`
 - Optional day: `אתמול`, `שלשום`, or `3/11` (e.g. `אתמול לבצלר 4 שעות`)
 
-**Commands:** `דוח` (this month so far), `דוח קודם` (last month), `מחק` (delete last entry), `עזרה`.
+**Commands:** `דוח` (this month so far), `דוח קודם` (last month), `מחק` (delete last entry), `רשימה` (numbered list), `מחק 3` (delete entry 3 from the last list), `נקה חודש` + `אישור` (clear the month), `עזרה`.
 Also `/start`, `/help`, `/report`, `/prev`, `/undo`.
 
 **Month-end:** on the last day of each month (about 19:00-20:00 Israel time) the report is sent automatically.

@@ -5,7 +5,7 @@
   "type": "module",
   "description": "WhatsApp work-hours logger with monthly report",
   "scripts": {
-    "test": "node test/parse.test.mjs"
+    "test": "node test/parse.test.mjs && node --experimental-test-module-mocks test/handler.test.mjs"
   },
   "dependencies": {
     "@netlify/blobs": "^8.1.0"
