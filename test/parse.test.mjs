@@ -56,7 +56,7 @@ const entries = [
   { date: '2026-11-02', place: 'לבצלר', minutes: 270, ts: 3 },
 ];
 const report = buildReport('2026-11', entries);
-assert.ok(report.includes('לבצלר — 8.5'));
-assert.ok(report.includes('סה״כ: 10.5 שעות'));
+assert.ok(report.includes('לבצלר =\n02/11 4.5\n03/11 4'));
+assert.ok(report.includes('סה״כ = 10.5 שעות'));
 console.log(report);
 console.log('\nAll tests passed');
