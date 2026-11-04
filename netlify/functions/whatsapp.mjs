@@ -80,7 +80,12 @@ export default async (req) => {
   if (req.method !== 'POST') return new Response('method not allowed', { status: 405 });
 
   const raw = await req.text();
+  console.log('POST received', raw.length, 'bytes');
   if (!validSignature(raw, req.headers.get('x-hub-signature-256'))) {
+    console.error('Rejected: bad signature. Check WA_APP_SECRET.', {
+      hasSecret: Boolean(process.env.WA_APP_SECRET),
+      hasHeader: Boolean(req.headers.get('x-hub-signature-256')),
+    });
     return new Response('bad signature', { status: 401 });
   }
 
@@ -92,6 +97,10 @@ export default async (req) => {
     for (const change of entry.changes ?? []) {
       for (const msg of change.value?.messages ?? []) {
         const from = msg.from;
+        console.log('message from', from, 'type', msg.type, 'allowed:', allowed.length, 'envs:', {
+          token: Boolean(process.env.WA_TOKEN),
+          phoneId: Boolean(process.env.WA_PHONE_NUMBER_ID),
+        });
         if (!allowed.includes(from)) { console.log('ignored sender', from); continue; }
 
         // Meta retries on slow responses; skip message ids we've already handled
